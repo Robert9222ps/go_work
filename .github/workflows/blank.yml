@@ -12,10 +12,10 @@ on:
        - go1.19.3
        - go1.18.1
       
-job:
+jobs:
   log-the-inputs:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
-      - run:
-     echo "Go version: $GOVERSION"
-     env: GOVERSION ${{inputs.Goversion}}     
+      - run: |
+            echo "Go version: $GOVERSION"
+            env: GOVERSION ${{inputs.Goversion}}     
