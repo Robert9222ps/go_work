@@ -1,21 +1,21 @@
-name: Go package
-
-on: [push]
-
-jobs:
-  build:
-
-    runs-on: ubuntu-latest
+name: go version1
+on:
+ workflow_dispatch:
+   inputs:
+     Goversion:
+       description: 'Go version'
+       required: true
+       default: 'go1.19.3'
+       type: choice
+       options:
+       - go1.19.5
+       - go1.19.3
+       - go1.18.1
+      
+job:
+  log-the-inputs:
+    run-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Set up Go
-        uses: actions/setup-go@v3
-        with:
-          go-version: 1.15
-
-      - name: Build
-        run: go build -v ./...
-
-      - name: Test
-        run: go test -v ./...
+      - run:
+     echo "Go version: $GOVERSION"
+     env: GOVERSION ${{inputs.Goversion}}     
