@@ -1,16 +1,16 @@
-name: go version1
+name: go-version1
 on:
  workflow_dispatch:
    inputs:
      Goversion:
-       description: 'Go version'
+       description: 'Goversion'
        required: true
-       default: 'go1.19.3'
+       default: '1.15.15'
        type: choice
        options:
-       - go1.19.5
-       - go1.19.3
-       - go1.18.1
+       - 1.16.6
+       - 1.15.15
+       - 1.12.4
       
 jobs:
   log-the-inputs:
@@ -18,4 +18,5 @@ jobs:
     steps:
       - run: |
           echo "Go version: $GOVERSION"
-          env: GOVERSION ${{inputs.Goversion}}     
+        env:
+          GOVERSION ${{inputs.Goversion}}     
