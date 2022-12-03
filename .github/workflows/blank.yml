@@ -19,4 +19,4 @@ jobs:
       - run: |
           echo "Goversion: $GOVERSION"
         env:
-          GOVERSION ${{inputs.Goversion}}     
+          GOVERSION: ${{ inputs.Goversion }}     
