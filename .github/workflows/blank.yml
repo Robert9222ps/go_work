@@ -17,5 +17,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-            echo "Go version: $GOVERSION"
-            env: GOVERSION ${{inputs.Goversion}}     
+          echo "Go version: $GOVERSION"
+          env: GOVERSION ${{inputs.Goversion}}     
